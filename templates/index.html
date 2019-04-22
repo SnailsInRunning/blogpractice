@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>主页</title>
+   <style type = "text/css">
+   .odd { 
+    color:blue;
+    margin:40px 0;
+    font-weight: bold;
+   }
+   .evn {
+    color: #cc0033;
+    padding-left: 10px;
+   }
+   </style>
+</head>
+
+
+<body>
+<ul>
+{% for k, v in post.items %}
+    <li class = '{{forloop.counter0|divisibleby:"2"|yesno:"odd, evn"}}' > 
+    {{forloop.counter}}  {{k}} {{v}}
+    </li>
+{% endfor %}
+</ul>
+</body>
+</html>
